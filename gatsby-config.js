@@ -5,7 +5,7 @@ module.exports = {
       "I am a Senior Web Developer at TWG with a background in design, marketing, e-commerce, book publishing, mural painting, and art restoration.",
     image: "images/Carolyn.png", // Path to your image you placed in the 'static' folder
     twitterUsername: "@carolynalive",
-    siteUrl: "carolynmcneillie.com",
+    siteUrl: "https://carolynmcneillie.com",
   },
   plugins: [
     {
