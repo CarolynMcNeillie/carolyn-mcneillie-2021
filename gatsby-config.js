@@ -9,6 +9,7 @@ module.exports = {
         trackingId: "UA-113885017-1",
       },
     },
+    "gatsby-plugin-fontawesome-css",
     "gatsby-plugin-sharp",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
@@ -17,14 +18,14 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: "./src/images/",
+        path: "./src/common/images/",
       },
       __key: "images",
     },
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`montserrat`, `cardo`],
+        fonts: [`montserrat:400,700`, `cardo`],
         display: "swap",
       },
     },
