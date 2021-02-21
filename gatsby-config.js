@@ -3,9 +3,9 @@ module.exports = {
     title: "Carolyn McNeillie",
     description:
       "I am a Senior Web Developer at TWG with a background in design, marketing, e-commerce, book publishing, mural painting, and art restoration.",
-    url: "https://www.carolynmcneillie.com", // No trailing slash allowed!
     image: "images/Carolyn.png", // Path to your image you placed in the 'static' folder
     twitterUsername: "@carolynalive",
+    siteUrl: "carolynmcneillie.com",
   },
   plugins: [
     {
