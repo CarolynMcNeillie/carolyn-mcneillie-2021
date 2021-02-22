@@ -58,7 +58,7 @@ const IndexPage = () => {
           </a>
           , book publishing, mural painting, and{" "}
           <a href={BoxInValise}>art restoration</a>. Using React, TypeScript,
-          and GraphQL I have helped build e-commerce, websites, and web
+          and GraphQL, I have helped build e-commerce, websites, and web
           applications for clients including{" "}
           <a href="https://houseofanansi.com/" target="_blank" rel="noreferrer">
             House of Anansi
