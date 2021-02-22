@@ -10,7 +10,7 @@ export const Profile = () => {
       file(relativePath: { eq: "Carolyn.png" }) {
         childImageSharp {
           fixed(width: 218, height: 300) {
-            ...GatsbyImageSharpFixed
+            ...GatsbyImageSharpFixed_noBase64
           }
         }
       }
@@ -19,7 +19,11 @@ export const Profile = () => {
 
   return (
     <ProfileImage>
-      <Img fixed={data.file.childImageSharp.fixed} alt="Carolyn" />
+      <Img
+        fixed={data.file.childImageSharp.fixed}
+        alt="Carolyn"
+        fadeIn={false}
+      />
     </ProfileImage>
   );
 };
