@@ -2,11 +2,8 @@ import React from "react";
 import "normalize.css/normalize.css";
 import { Helmet } from "react-helmet";
 
-import BoxInValise from "../images/box-in-valise.jpg";
 import { Page } from "../common/components/Page";
-import { Profile } from "../common/components/Profile";
 import { Social } from "../common/components/Social";
-import { TextBox } from "../common/components/TextBox";
 
 const NotFoundPage = () => {
   return (

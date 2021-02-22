@@ -16,7 +16,7 @@ export const PageContainer = styled.main`
 
   a {
     text-decoration: none;
-    color: #000;
+    color: #607f61;
     transition: color 0.4s;
     position: relative;
     white-space: nowrap;
@@ -124,6 +124,7 @@ export const SocialItem = styled.li`
   a {
     padding: 0;
     margin: 0;
+    color: #000000;
 
     &::after {
       display: none;
