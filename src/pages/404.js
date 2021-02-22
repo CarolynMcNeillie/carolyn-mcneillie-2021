@@ -1,49 +1,38 @@
-import * as React from "react";
-import { Link } from "gatsby";
+import React from "react";
+import "normalize.css/normalize.css";
+import { Helmet } from "react-helmet";
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-};
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-};
+import BoxInValise from "../images/box-in-valise.jpg";
+import { Page } from "../common/components/Page";
+import { Profile } from "../common/components/Profile";
+import { Social } from "../common/components/Social";
+import { TextBox } from "../common/components/TextBox";
 
-const paragraphStyles = {
-  marginBottom: 48,
-};
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-};
-
-// markup
 const NotFoundPage = () => {
   return (
-    <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
+    <Page>
+      <Helmet
+        htmlAttributes={{
+          lang: "en",
+        }}
+      >
+        <meta charSet="utf-8" />
+        <title>404 — Carolyn McNeillie</title>
+        <meta
+          name="description"
+          content="I am a Senior Web Developer at TWG with a background in design, marketing, e-commerce, book publishing, mural painting, and art restoration."
+        ></meta>
+        <link rel="canonical" href="http://carolynmcneillie.com" />
+      </Helmet>
+      <div>
+        <h1>Oops!</h1>
+        <h2>
+          This page doesn't exist. <br />
+          <a href="/">Go home</a>, or visit me on one of these ↓
+        </h2>
+      </div>
+      <Social />
+    </Page>
   );
 };
 
