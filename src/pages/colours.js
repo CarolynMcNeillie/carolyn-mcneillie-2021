@@ -17,7 +17,7 @@ const NotFoundPage = () => {
         }}
       >
         <meta charSet="utf-8" />
-        <title>404 — Carolyn McNeillie</title>
+        <title>Your True Colours — Carolyn McNeillie</title>
         <meta
           name="description"
           content="I am a Senior Web Developer at TWG with a background in design, marketing, e-commerce, book publishing, mural painting, and art restoration."
