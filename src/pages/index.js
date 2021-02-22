@@ -57,11 +57,11 @@ const IndexPage = () => {
             e-commerce
           </a>
           , book publishing, mural painting, and{" "}
-          <a href={BoxInValise}>art restoration</a>. Using React, TypeScript and
-          GraphQL I have helped build e-commerce and web applications for
-          clients including{" "}
+          <a href={BoxInValise}>art restoration</a>. Using React, TypeScript,
+          and GraphQL I have helped build e-commerce, websites, and web
+          applications for clients including{" "}
           <a href="https://houseofanansi.com/" target="_blank" rel="noreferrer">
-            House of Anansi Press
+            House of Anansi
           </a>
           ,{" "}
           <a
@@ -72,8 +72,12 @@ const IndexPage = () => {
             Chan Zuckerberg Initiative
           </a>
           ,{" "}
-          <a href="https://joya.ca/" target="_blank" rel="noreferrer">
-            Joyà
+          <a
+            href="https://www.greenshield.ca/en-ca/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Green Shield
           </a>
           , &{" "}
           <a href="https://www.shopify.ca/" target="_blank" rel="noreferrer">
