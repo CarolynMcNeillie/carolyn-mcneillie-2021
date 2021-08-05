@@ -3,6 +3,7 @@ import "normalize.css/normalize.css";
 import { Helmet } from "react-helmet";
 
 import BoxInValise from "../images/box-in-valise.jpg";
+import Circle from "../images/circle.png";
 import { Page } from "../common/components/Page";
 import { Profile } from "../common/components/Profile";
 import { Social } from "../common/components/Social";
@@ -36,7 +37,7 @@ const IndexPage = () => {
       </div>
       <TextBox>
         <p>
-          I am a Senior Web Developer with a{" "}
+          I am a Senior Web Developer   with a{" "}
           <a
             href="https://junocollege.com/blog/alumni-stories-from-publishing-creative-to-frontend-developer"
             target="_blank"
@@ -83,7 +84,7 @@ const IndexPage = () => {
           <br />I ♡ CSS.
         </p>
       </TextBox>
-      <Social />
+      <Social /><a href={ Circle}>.</a>
     </Page>
   );
 };
