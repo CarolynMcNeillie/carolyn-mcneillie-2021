@@ -36,11 +36,7 @@ const IndexPage = () => {
       </div>
       <TextBox>
         <p>
-          I am a Senior Web Developer at{" "}
-          <a href="https://twg.io/" target="_blank" rel="noreferrer">
-            TWG
-          </a>{" "}
-          with a{" "}
+          I am a Senior Web Developer with a{" "}
           <a
             href="https://junocollege.com/blog/alumni-stories-from-publishing-creative-to-frontend-developer"
             target="_blank"
