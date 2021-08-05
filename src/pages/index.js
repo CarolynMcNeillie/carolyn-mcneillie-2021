@@ -81,10 +81,10 @@ const IndexPage = () => {
             Shopify
           </a>
           .
-          <br />I ♡ CSS.
+          <br />I ♡ CSS<a href={ Circle }>.</a>
         </p>
       </TextBox>
-      <Social /><a href={ Circle}>.</a>
+      <Social />
     </Page>
   );
 };
