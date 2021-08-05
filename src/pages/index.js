@@ -3,7 +3,7 @@ import "normalize.css/normalize.css";
 import { Helmet } from "react-helmet";
 
 import BoxInValise from "../images/box-in-valise.jpg";
-import Circle from "../images/circle.png";
+import Circle from "../images/circle.jpg";
 import { Page } from "../common/components/Page";
 import { Profile } from "../common/components/Profile";
 import { Social } from "../common/components/Social";
