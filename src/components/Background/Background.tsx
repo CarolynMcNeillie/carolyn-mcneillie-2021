@@ -28,10 +28,13 @@ const Tile = () => {
       <>
       {tiles.daisy.pattern.map((color, index) => {
         console.log('index', index, 'div', Math.floor(index / tiles.daisy.size))
+        const xPosition = index % tiles.daisy.size
+        const yPosition = Math.floor(index / tiles.daisy.size)
       return (
         <rect
-          x={index % tiles.daisy.size * 10}
-          y={Math.floor(index / tiles.daisy.size) * 10}
+          x={xPosition * 10}
+          y={yPosition * 10}
+          // delay={xPosition + yPosition}
           width="10"
           height="10"
           className={`cell ${cells[color]}`} 
@@ -44,8 +47,9 @@ const Tile = () => {
 
 const Background = () => {
   const size = tiles.daisy.size * 10
+  const backgroundImage = document.getElementById('title')
   return (
-    <div className="background" style={{backgroundImage: URL('#tile')}}>
+    <div className="background">
         <svg 
           xmlnsXlink="http://www.w3.org/1999/xlink" 
           version="1.1" xmlns="http://www.w3.org/2000/svg" 
