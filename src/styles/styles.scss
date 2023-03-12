@@ -1,0 +1,42 @@
+:root {
+    --light: #e6cbc9;
+    --dark: #242236;
+    --medium: #344767;
+}
+
+.background {
+    background-color: var(--light);
+    min-height: 100vh;
+    min-width: 100vw;
+    position: fixed;
+    z-index: -100;
+}
+
+.cell {
+    width: 10%;
+    height: 10%;
+}
+
+.light {
+    background-color: var(--light);
+}
+
+.medium {
+    background-color: var(--medium);
+}
+
+.dark {
+    background-color: var(--dark);
+}
+
+main {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: var(--dark);
+}

@@ -1,11 +1,11 @@
 {
-  "name": "carolyn-mc-neillie",
+  "name": "carolyn-mcneillie",
   "version": "1.0.0",
   "private": true,
-  "description": "carolyn-mc-neillie",
+  "description": "carolyn-mcneillie",
   "author": "CarolynMcNeillie",
   "keywords": [
-    "gatsby"
+    "carolyn mcneillie developer frontend technologist design"
   ],
   "scripts": {
     "develop": "gatsby develop",
