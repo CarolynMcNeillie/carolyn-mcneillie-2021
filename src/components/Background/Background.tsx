@@ -1,6 +1,6 @@
 import React from "react"
 
-const cells = ['light', 'medium', 'dark']
+const cells = ['dark', 'medium', 'light']
 
 const tiles = {
   daisy: {
@@ -27,7 +27,9 @@ const Tile = () => {
   return (
     <div className="tile">
       {tiles.daisy.pattern.map((color) => (
-        <div className={`cell ${cells[color]}`} style={{ opacity: Math.random() + 0.8 }}></div>
+        <div 
+          className={`cell ${cells[color]}`} 
+        />
       ))}
     </div>
   )

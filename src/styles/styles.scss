@@ -4,17 +4,38 @@
     --medium: #344767;
 }
 
-.background {
-    background-color: var(--light);
+main {
     min-height: 100vh;
     min-width: 100vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.background {
+    background-color: var(--dark);
+    min-height: 110vh;
+    min-width: 110vw;
     position: fixed;
     z-index: -100;
     display: flex;
     flex-wrap: wrap;
     user-select: none;
-    align-items: start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
+    border: 10px solid red;
+    
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background-image: url('./papier.jpg');
+        mix-blend-mode: overlay;
+    }
 }
 
 .tile {
@@ -32,7 +53,7 @@
     width: calc(100%/13);
     height: calc(100%/13);
     display: block;
-    filter: url(#gooMe);
+    // filter: url(#gooMe);
     transform-origin: center;
 }
 
@@ -42,20 +63,10 @@
 
 .medium {
     background-color: var(--medium);
-    mix-blend-mode: multiply;
 }
 
 .dark {
     background-color: var(--dark);
-    mix-blend-mode: multiply;
-}
-
-main {
-    min-height: 100vh;
-    min-width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 h1 {
