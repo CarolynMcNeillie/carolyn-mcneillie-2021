@@ -4,11 +4,19 @@
     --medium: #344767;
 }
 
-main {
-    min-height: 100vh;
-    min-width: 100vw;
-    overflow: hidden;
-    position: relative;
+.light {
+    background-color: var(--light);
+    fill: var(--light)
+}
+
+.medium {
+    background-color: var(--medium);
+    fill: var(--medium)
+}
+
+.dark {
+    background-color: var(--dark);
+    fill: var(--dark)
 }
 
 .background {
@@ -16,10 +24,6 @@ main {
     position: fixed;
     inset: 0;
     z-index: -100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
     
     &::after {
         content: '';
@@ -35,6 +39,7 @@ main {
 .tile {
     width: calc(100vw / 7);
     height: calc(100vw / 7);
+    // border: 1px solid yellow;
 
     &:nth-child(odd) {
         transform: scaleX(-1);
@@ -43,6 +48,7 @@ main {
 
 .row {
     z-index: 1;
+    display: flex;
 
     &:nth-child(even) {
         transform: scaleY(-1);
@@ -56,20 +62,7 @@ main {
     animation-fill-mode: forwards; 
 }
 
-.light {
-    background-color: var(--light);
-    fill: var(--light)
-}
 
-.medium {
-    background-color: var(--medium);
-    fill: var(--medium)
-}
-
-.dark {
-    background-color: var(--dark);
-    fill: var(--dark)
-}
 
 @keyframes appear {
     from {

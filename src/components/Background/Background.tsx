@@ -21,8 +21,8 @@ const generateTile = () => {
         <motion.rect
           x={xPosition * 10}
           y={yPosition * 10}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{
             duration: 0.5,
             delay: (xPosition + yPosition) * 0.1
