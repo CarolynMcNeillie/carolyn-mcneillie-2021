@@ -10,11 +10,30 @@
     min-width: 100vw;
     position: fixed;
     z-index: -100;
+    display: flex;
+    flex-wrap: wrap;
+    user-select: none;
+    align-items: start;
+    justify-content: flex-start;
+}
+
+.tile {
+    width: 10vw;
+    height: 10vw;
+    display: flex;
+    flex-wrap: wrap;
+
+    &:nth-child(odd) {
+        transform: scaleX(-1);
+    }
 }
 
 .cell {
-    width: 10%;
-    height: 10%;
+    width: calc(100%/13);
+    height: calc(100%/13);
+    display: block;
+    filter: url(#gooMe);
+    transform-origin: center;
 }
 
 .light {
@@ -23,10 +42,12 @@
 
 .medium {
     background-color: var(--medium);
+    mix-blend-mode: multiply;
 }
 
 .dark {
     background-color: var(--dark);
+    mix-blend-mode: multiply;
 }
 
 main {
