@@ -1,68 +1,48 @@
 import React from "react"
+import { motion } from "framer-motion";
+
+import tiles from './tiles'
 
 const cells = ['dark', 'medium', 'light']
 
-const tiles = {
-  daisy: {
-    size: 13,
-    pattern: [
-      2, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 1,
-      0, 2, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0,
-      2, 0, 2, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0,
-      2, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0,
-      0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 
-      0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0,
-      0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0,
-      0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0,
-      0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0,
-      0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 2,
-      0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 2, 0, 2,
-      0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 2, 0,
-      1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 2,
-    ]
-  },
-}
-
 const Tile = () => {
+  const size = tiles[0].size * 10
   return (
-      <>
-      {tiles.daisy.pattern.map((color, index) => {
-        console.log('index', index, 'div', Math.floor(index / tiles.daisy.size))
-        const xPosition = index % tiles.daisy.size
-        const yPosition = Math.floor(index / tiles.daisy.size)
+    <svg 
+      xmlnsXlink="http://www.w3.org/1999/xlink" 
+      version="1.1" xmlns="http://www.w3.org/2000/svg" 
+      viewBox={`0 0 ${size} ${size}`}
+      className="tile"
+      >
+      {tiles[0].pattern.map((color, index) => {
+        const xPosition = index % tiles[0].size
+        const yPosition = Math.floor(index / tiles[0].size)
       return (
         <rect
           x={xPosition * 10}
           y={yPosition * 10}
-          // delay={xPosition + yPosition}
+          data-delay={xPosition + yPosition}
+          rx ="3"
           width="10"
           height="10"
-          className={`cell ${cells[color]}`} 
+          className={cells[color]} 
           key={`cell-${index}`}
         />
       )})}
-      </>
+      </svg>
   )
 }
 
 const Background = () => {
-  const size = tiles.daisy.size * 10
-  const backgroundImage = document.getElementById('title')
   return (
     <div className="background">
-        <svg 
-          xmlnsXlink="http://www.w3.org/1999/xlink" 
-          version="1.1" xmlns="http://www.w3.org/2000/svg" 
-          viewBox={`0 0 ${size} ${size}`}
-          id="tile"
-          >
-          {/* <filter id="gooMe">
-            <feGaussianBlur stdDeviation="2" result="blur"/>
-            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10" result="goo" />
-              <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
-          </filter> */}
-          <Tile/>
-        </svg>
+      <Tile/><Tile/><Tile/><Tile/><Tile/><Tile/><Tile/>
+      <Tile/><Tile/><Tile/><Tile/><Tile/><Tile/><Tile/>
+      <Tile/><Tile/><Tile/><Tile/><Tile/><Tile/><Tile/>
+      <Tile/><Tile/><Tile/><Tile/><Tile/><Tile/><Tile/>
+      <Tile/><Tile/><Tile/><Tile/><Tile/><Tile/><Tile/>
+      <Tile/><Tile/><Tile/><Tile/><Tile/><Tile/><Tile/>
+      <Tile/><Tile/><Tile/><Tile/><Tile/><Tile/><Tile/>
     </div>
   )
 }
