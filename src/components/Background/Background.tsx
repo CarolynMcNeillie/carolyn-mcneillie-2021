@@ -1,11 +1,11 @@
-import React from "react"
+import React, {useMemo} from "react"
 import { motion } from "framer-motion";
 
 import tiles from './tiles'
 
 const cells = ['dark', 'medium', 'light']
 
-const Tile = () => {
+const generateTile = () => {
   const size = tiles[0].size * 10
   return (
     <svg 
@@ -17,32 +17,112 @@ const Tile = () => {
       {tiles[0].pattern.map((color, index) => {
         const xPosition = index % tiles[0].size
         const yPosition = Math.floor(index / tiles[0].size)
-      return (
-        <rect
+      return color > 0 ? (
+        <motion.rect
           x={xPosition * 10}
           y={yPosition * 10}
-          data-delay={xPosition + yPosition}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 0.5,
+            delay: (xPosition + yPosition) * 0.1
+          }}
           rx ="3"
           width="10"
           height="10"
-          className={cells[color]} 
+          className={`${cells[color]}`}
           key={`cell-${index}`}
         />
-      )})}
+      ) : ''})}
       </svg>
   )
 }
 
 const Background = () => {
+  const myTile = useMemo(generateTile, [])
   return (
     <div className="background">
-      <Tile/><Tile/><Tile/><Tile/><Tile/><Tile/><Tile/>
-      <Tile/><Tile/><Tile/><Tile/><Tile/><Tile/><Tile/>
-      <Tile/><Tile/><Tile/><Tile/><Tile/><Tile/><Tile/>
-      <Tile/><Tile/><Tile/><Tile/><Tile/><Tile/><Tile/>
-      <Tile/><Tile/><Tile/><Tile/><Tile/><Tile/><Tile/>
-      <Tile/><Tile/><Tile/><Tile/><Tile/><Tile/><Tile/>
-      <Tile/><Tile/><Tile/><Tile/><Tile/><Tile/><Tile/>
+      <div className="row">
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+      </div>
+      <div className="row">
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+      </div>
+      <div className="row">
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+      </div>
+      <div className="row">
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+      </div>
+      <div className="row">
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+      </div>
+      <div className="row">
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+      </div>
+      <div className="row">
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+      </div>
+      <div className="row">
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+      </div>
+      <div className="row">
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+        {myTile}
+      </div>
     </div>
   )
 }

@@ -35,11 +35,25 @@ main {
 .tile {
     width: calc(100vw / 7);
     height: calc(100vw / 7);
-    z-index: 1;
 
     &:nth-child(odd) {
         transform: scaleX(-1);
     }
+}
+
+.row {
+    z-index: 1;
+
+    &:nth-child(even) {
+        transform: scaleY(-1);
+    }
+}
+
+.cell {
+    animation-name: appear;
+    animation-duration: 5s;
+    animation-delay: attr(data-delay);
+    animation-fill-mode: forwards; 
 }
 
 .light {
@@ -56,3 +70,15 @@ main {
     background-color: var(--dark);
     fill: var(--dark)
 }
+
+@keyframes appear {
+    from {
+      transform: scale(0);
+      opacity: 0;
+    }
+  
+    to {
+      transform:scale(1);
+      opacity: 1;
+    }
+  }
