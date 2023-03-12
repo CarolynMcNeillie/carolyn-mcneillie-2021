@@ -25,45 +25,40 @@ const tiles = {
 
 const Tile = () => {
   return (
-    <div className="tile">
-      {tiles.daisy.pattern.map((color) => (
-        <div 
+      <>
+      {tiles.daisy.pattern.map((color, index) => {
+        console.log('index', index, 'div', Math.floor(index / tiles.daisy.size))
+      return (
+        <rect
+          x={index % tiles.daisy.size * 10}
+          y={Math.floor(index / tiles.daisy.size) * 10}
+          width="10"
+          height="10"
           className={`cell ${cells[color]}`} 
+          key={`cell-${index}`}
         />
-      ))}
-    </div>
+      )})}
+      </>
   )
 }
 
 const Background = () => {
+  const size = tiles.daisy.size * 10
   return (
-    <div className="background">
+    <div className="background" style={{backgroundImage: URL('#tile')}}>
         <svg 
           xmlnsXlink="http://www.w3.org/1999/xlink" 
           version="1.1" xmlns="http://www.w3.org/2000/svg" 
-          viewBox="0 0 1000 1000">
-          <filter id="gooMe">
+          viewBox={`0 0 ${size} ${size}`}
+          id="tile"
+          >
+          {/* <filter id="gooMe">
             <feGaussianBlur stdDeviation="2" result="blur"/>
             <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10" result="goo" />
               <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
-          </filter>
+          </filter> */}
+          <Tile/>
         </svg>
-        <Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile />
-        <Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile />
-        <Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile />
-        <Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile />
-        <Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile />
-        <Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile />
-        <Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile />
-        <Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile />
-        <Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile />
-        <Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile />
-        <Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile />
-        <Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile />
-        <Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile />
-        <Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile />
-        <Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile />
-        <Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile /><Tile />
     </div>
   )
 }

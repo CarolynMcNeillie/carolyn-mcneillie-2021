@@ -16,16 +16,22 @@ main {
 
 .background {
     background-color: var(--dark);
-    min-height: 110vh;
-    min-width: 110vw;
     position: fixed;
+    inset: 0;
     z-index: -100;
     display: flex;
-    flex-wrap: wrap;
-    user-select: none;
     align-items: center;
     justify-content: center;
     border: 10px solid red;
+    background-image: url('#tile')
+
+    svg {
+        border: 2px solid white;
+        width: 20vw;
+        height: 20vw;
+        position: relative;
+        z-index: 100;
+    }
     
     &::after {
         content: '';
@@ -59,14 +65,17 @@ main {
 
 .light {
     background-color: var(--light);
+    fill: var(--light)
 }
 
 .medium {
     background-color: var(--medium);
+    fill: var(--medium)
 }
 
 .dark {
     background-color: var(--dark);
+    fill: var(--dark)
 }
 
 h1 {
