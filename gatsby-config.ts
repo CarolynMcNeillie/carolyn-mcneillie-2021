@@ -18,8 +18,7 @@ const config: GatsbyConfig = {
         display: "swap",
       },
     },
-    "gatsby-plugin-sass", 
-    "gatsby-plugin-google-gtag", 
+    "gatsby-plugin-sass",
     "gatsby-plugin-sitemap"
   ]
 };
