@@ -6,7 +6,12 @@ import themes from './themes'
 
 const cells = ['dark', 'medium', 'light']
 
-const currentTile = 0
+const randomIntFromInterval = (min: number, max:number) => {
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+const currentTile = randomIntFromInterval(0, tiles.length -1)
+const scheme = randomIntFromInterval(0, themes.length -1)
 
 function updateTheme(index: number) {
   const newTheme = themes[index]
@@ -15,7 +20,8 @@ function updateTheme(index: number) {
   })
 }
 
-updateTheme(1)
+updateTheme(scheme)
+
 
 
 const generateTile = () => {

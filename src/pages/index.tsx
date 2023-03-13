@@ -10,7 +10,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <Background />
       {/* <h1>Hello</h1> */}
     </main>
-  )
+  ) 
 }
 
 export default IndexPage
