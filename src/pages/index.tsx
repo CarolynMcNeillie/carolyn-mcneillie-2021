@@ -63,7 +63,7 @@ const IndexPage: React.FC<PageProps> = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img src="/images/codepen.svg" width="28" height="28" />
+                <img src="/images/codepen.svg" width="28" height="28" alt="Code pen" />
                 <span>Codepen</span>
               </a>
             </li>
@@ -73,7 +73,7 @@ const IndexPage: React.FC<PageProps> = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img src="/images/github.svg" width="28" height="29" />
+                <img src="/images/github.svg" width="28" height="29" alt="Github" />
                 <span>GitHub</span>
               </a>
             </li>
@@ -83,7 +83,7 @@ const IndexPage: React.FC<PageProps> = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img src="/images/twitter.svg" width="28" height="28" />
+                <img src="/images/twitter.svg" width="28" height="28" alt="Twitter" />
                 <span>Twitter</span>
               </a>
             </li>
@@ -93,7 +93,7 @@ const IndexPage: React.FC<PageProps> = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img src="/images/medium.svg" width="28" height="22" />
+                <img src="/images/medium.svg" width="28" height="22" alt="Medium" />
                 <span>Medium</span>
               </a>
             </li>
@@ -103,7 +103,7 @@ const IndexPage: React.FC<PageProps> = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img src="/images/linkedin.svg" width="28" height="32" />
+                <img src="/images/linkedin.svg" width="28" height="32" alt="LinkedIn" />
                 <span>LinkedIn</span>
               </a>
             </li>
