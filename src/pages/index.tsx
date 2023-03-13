@@ -4,8 +4,6 @@ import "../styles/normalize.css"
 import "../styles/styles.scss"
 import Background from "../components/Background/Background"
 import { motion } from "framer-motion";
-import { useStaticQuery, graphql } from "gatsby";
-import Img, { StaticImage } from 'gatsby-plugin-image'
 
 const container = {
   hidden: { opacity: 0, scale: 0.8 },
@@ -41,20 +39,75 @@ const IndexPage: React.FC<PageProps> = () => {
         animate="visible"
       >
           <motion.div variants={item}>
+            <img src="/images/Carolyn.png" className="profileImage" alt="Carolyn McNeillie, illustration by Patrick Gray" />
           </motion.div>
           <motion.h1 variants={item}>Carolyn McNeillie</motion.h1>
-          <motion.h2 variants={item}>
+          <motion.p className="h2" variants={item}>
             Toronto / Hamilton / Anywhere <br />
             <a href="mailto:hello@carolynmcneillie.com">
               hello@carolynmcneillie.com
             </a>
-          </motion.h2>
-          <motion.p className="text" variants={item}>
-            I am a Senior Web Developer with a background in design, marketing, e-commerce, book publishing, mural painting, and{" "}
-            art restoration. Using React, TypeScript,
-            and GraphQL, I have helped build e-commerce, websites, and web
-            applications for clients including House of Anansi, Green Shield, & Shopify. I ♥️ CSS.
           </motion.p>
+          <motion.div className="text" variants={item}>
+            <p>
+              I’m a senior front-end developer with five years experience crafting exceptional web experiences. I hold a degree in fine art from OCAD University and spent 15 years working in art and design. My previous job titles have included of sign painter, art conservator, muralist, galley attendant, art director, and marketing director. I bring my experience and expertise to bear on everything I build.
+            </p>
+            <p>
+            I love collaborating with designers to bring their vision to life, and pushing the boundaries of what code can do in the browser. I love jamming on animations and micro interactions and I am passionate about solving complex design problems with creativity and empathy, always ensuring performance, maintainability, and accessibility are considered from the first line of code.
+            </p>
+          </motion.div>
+          <motion.ul className="socialList" variants={item}>
+            <li className="socialListItem">
+              <a
+                href="https://codepen.io/carolynmcneillie"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src="/images/codepen.svg" />
+                <span>Codepen</span>
+              </a>
+            </li>
+            <li className="socialListItem">
+              <a
+                href="https://github.com/CarolynMcNeillie"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src="/images/github.svg" />
+                <span>GitHub</span>
+              </a>
+            </li>
+            <li className="socialListItem">
+              <a
+                href="https://twitter.com/carolynalive"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src="/images/twitter.svg" />
+                <span>Twitter</span>
+              </a>
+            </li>
+            <li className="socialListItem">
+              <a
+                href="https://medium.com/@carolynmcneillie"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src="/images/medium.svg" />
+                <span>Medium</span>
+              </a>
+            </li>
+            <li className="socialListItem">
+              <a
+                href="https://www.linkedin.com/in/carolyn-mcneillie/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src="/images/linkedin.svg" />
+                <span>LinkedIn</span>
+              </a>
+            </li>
+          </motion.ul>
       </motion.div>
     </main>
   ) 
