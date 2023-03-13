@@ -4,6 +4,8 @@ import "../styles/normalize.css"
 import "../styles/styles.scss"
 import Background from "../components/Background/Background"
 import { motion } from "framer-motion";
+import { useStaticQuery, graphql } from "gatsby";
+import Img, { StaticImage } from 'gatsby-plugin-image'
 
 const container = {
   hidden: { opacity: 0, scale: 0.8 },
@@ -28,6 +30,7 @@ const item = {
 };
 
 const IndexPage: React.FC<PageProps> = () => {
+
   return (
     <main>
       <Background />
@@ -37,6 +40,8 @@ const IndexPage: React.FC<PageProps> = () => {
         initial="hidden"
         animate="visible"
       >
+          <motion.div variants={item}>
+          </motion.div>
           <motion.h1 variants={item}>Carolyn McNeillie</motion.h1>
           <motion.h2 variants={item}>
             Toronto / Hamilton / Anywhere <br />
