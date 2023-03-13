@@ -24,16 +24,6 @@
     position: fixed;
     inset: 0;
     z-index: -100;
-    
-    &::after {
-        content: '';
-        display: block;
-        position: absolute;
-        inset: 0;
-        z-index: 2;
-        background-image: url('./papier.jpg');
-        mix-blend-mode: overlay;
-    }
 }
 
 .tile {
@@ -55,23 +45,57 @@
     }
 }
 
-.cell {
-    animation-name: appear;
-    animation-duration: 5s;
-    animation-delay: attr(data-delay);
-    animation-fill-mode: forwards; 
+main {
+    box-sizing: border-box;
+    min-height: 100vh;
+    padding: 40px;
+    color: #1d1d1d;
+    line-height: 1.8;
+    font-family: cardo, serif;
+    display: flex;
+    align-items: center;
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        inset: 0;
+        z-index: 1000;
+        pointer-events: none;
+        background-image: url('./papier.jpg');
+        mix-blend-mode: overlay;
+    }
 }
 
+a {
+    color: var(--dark);
+    transition: color 0.2s;
+    text-decoration: none;
 
+    &:hover, &:focus {
+        color: var(--medium);
+        text-decoration: underline;
+    }
+}
 
-@keyframes appear {
-    from {
-      transform: scale(0);
-      opacity: 0;
-    }
-  
-    to {
-      transform:scale(1);
-      opacity: 1;
-    }
+.card {
+    background-color: var(--light);
+    padding: 40px 100px;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 4px;
+    box-shadow: 10px 10px 100px rgba(0, 0, 0, 0.5);
+    position: relative;
+
+  @media only screen and (max-width: 650px) {
+    padding: 40px 20px;
   }
+}
+
+.text {
+    max-width: 500px;
+    border-top: 1px solid var(--medium);
+    border-bottom: 1px solid var(--medium);
+    margin: 20px 0;
+    padding: 20px 0;
+}
