@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 import tiles from './tiles'
 import themes from './themes'
+import TulipSvg from "./tulip";
 
 const cells = ['dark', 'medium', 'light']
 
@@ -19,8 +20,6 @@ function updateTheme(index: number) {
     document.documentElement.style.setProperty(key, newTheme[key]);
   })
 }
-
-updateTheme(scheme)
 
 const generateTile = () => {
   const size = tiles[currentTile].size * 10
@@ -56,7 +55,12 @@ const generateTile = () => {
 }
 
 const Background = () => {
-  const myTile = useMemo(generateTile, [])
+  const isSSR = typeof window === "undefined"
+
+  const myTile = isSSR ? <TulipSvg />: useMemo(generateTile, [])
+  
+  if (!isSSR) { updateTheme(scheme) }
+
   return (
     <div className="background">
       <div className="row">
