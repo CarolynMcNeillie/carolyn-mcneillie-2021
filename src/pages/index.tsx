@@ -39,7 +39,7 @@ const IndexPage: React.FC<PageProps> = () => {
         animate="visible"
       >
           <motion.div variants={item}>
-            <img src="/images/Carolyn.png" className="profileImage" alt="Carolyn McNeillie, illustration by Patrick Gray" />
+            <img src="/images/Carolyn.png" className="profileImage" alt="Carolyn McNeillie, illustration by Patrick Gray" width="180" height="246"/>
           </motion.div>
           <motion.h1 variants={item}>Carolyn McNeillie</motion.h1>
           <motion.p className="h2" variants={item}>
@@ -50,10 +50,10 @@ const IndexPage: React.FC<PageProps> = () => {
           </motion.p>
           <motion.div className="text" variants={item}>
             <p>
-              I’m a senior front-end developer with five years experience crafting exceptional web experiences. I hold a degree in fine art from OCAD University and spent 15 years working in art and design. My previous job titles have included of sign painter, art conservator, muralist, galley attendant, art director, and marketing director. I bring my experience and expertise to bear on everything I build.
+              I am a senior front-end developer who has been crafting exceptional web experiences for five years. I hold a degree in fine art from OCAD University and spent 15 years working in art and design. My previous job titles include sign painter, art conservator, muralist, galley attendant, art director, and marketing director. I bring my expertise to bear on everything I build.
             </p>
             <p>
-            I love collaborating with designers to bring their vision to life, and pushing the boundaries of what code can do in the browser. I love jamming on animations and micro interactions and I am passionate about solving complex design problems with creativity and empathy, always ensuring performance, maintainability, and accessibility are considered from the first line of code.
+            I love collaborating with designers to bring their vision to life, and pushing the boundaries of what code can do in the browser. I love jamming on animations and micro interactions and I am passionate about solving complex design problems with creativity and empathy. I always ensure performance, maintainability, and accessibility are considered from the first line of code.
             </p>
           </motion.div>
           <motion.ul className="socialList" variants={item}>
@@ -63,7 +63,7 @@ const IndexPage: React.FC<PageProps> = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img src="/images/codepen.svg" />
+                <img src="/images/codepen.svg" width="28" height="28" />
                 <span>Codepen</span>
               </a>
             </li>
@@ -73,7 +73,7 @@ const IndexPage: React.FC<PageProps> = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img src="/images/github.svg" />
+                <img src="/images/github.svg" width="28" height="29" />
                 <span>GitHub</span>
               </a>
             </li>
@@ -83,7 +83,7 @@ const IndexPage: React.FC<PageProps> = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img src="/images/twitter.svg" />
+                <img src="/images/twitter.svg" width="28" height="28" />
                 <span>Twitter</span>
               </a>
             </li>
@@ -93,7 +93,7 @@ const IndexPage: React.FC<PageProps> = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img src="/images/medium.svg" />
+                <img src="/images/medium.svg" width="28" height="22" />
                 <span>Medium</span>
               </a>
             </li>
@@ -103,7 +103,7 @@ const IndexPage: React.FC<PageProps> = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img src="/images/linkedin.svg" />
+                <img src="/images/linkedin.svg" width="28" height="32" />
                 <span>LinkedIn</span>
               </a>
             </li>

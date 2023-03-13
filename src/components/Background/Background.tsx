@@ -22,8 +22,6 @@ function updateTheme(index: number) {
 
 updateTheme(scheme)
 
-
-
 const generateTile = () => {
   const size = tiles[currentTile].size * 10
   return (
