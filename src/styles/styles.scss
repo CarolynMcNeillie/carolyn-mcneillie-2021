@@ -1,5 +1,4 @@
 // Global
-
 :root {
   --light: #e6cbc9;
   --medium: #344767;
@@ -213,7 +212,6 @@ main {
 .tile {
   width: calc(100vw / 7);
   height: calc(100vw / 7);
-  // border: 1px solid yellow;
 
   &:nth-child(odd) {
       transform: scaleX(-1);
