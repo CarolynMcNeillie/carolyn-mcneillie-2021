@@ -1,9 +1,8 @@
-import React, {useMemo} from "react"
+import React, {useMemo, useState} from "react"
 import { motion } from "framer-motion";
 
 import tiles from './tiles'
 import themes from './themes'
-import TulipSvg from "./tulip";
 
 const cells = ['dark', 'medium', 'light']
 
@@ -56,10 +55,12 @@ const generateTile = () => {
 
 const Background = () => {
   const isSSR = typeof window === "undefined"
+  const myTile = useMemo(generateTile, [])
 
-  const myTile = isSSR ? <TulipSvg />: useMemo(generateTile, [])
+  if (!isSSR) {
+    updateTheme(scheme)
+  }
   
-  if (!isSSR) { updateTheme(scheme) }
 
   return (
     <div className="background">

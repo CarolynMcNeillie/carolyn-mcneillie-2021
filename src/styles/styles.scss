@@ -2,7 +2,7 @@
 :root {
   --light: #e6cbc9;
   --medium: #344767;
-  --dark: #242236;
+  --dark: #1d1d1d;
   --black: #1d1d1d;
   --white: #e1e1e1;
 }
@@ -189,17 +189,20 @@ main {
 // Background Animation
 .light {
   background-color: var(--light);
-  fill: var(--light)
+  fill: var(--light);
+  transition: color 0.4s;
 }
 
 .medium {
   background-color: var(--medium);
-  fill: var(--medium)
+  fill: var(--medium);
+  transition: color 0.4s;
 }
 
 .dark {
   background-color: var(--dark);
-  fill: var(--dark)
+  fill: var(--dark);
+  transition: color 0.4s;
 }
 
 .background {

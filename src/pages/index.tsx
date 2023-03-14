@@ -39,7 +39,7 @@ const IndexPage: React.FC<PageProps> = () => {
         animate="visible"
       >
           <motion.div variants={item}>
-            <img src="/images/Carolyn.png" className="profileImage" alt="Carolyn McNeillie, illustration by Patrick Gray" width="180" height="246"/>
+            <img src="./images/Carolyn.png" className="profileImage" alt="Carolyn McNeillie, illustration by Patrick Gray" width="180" height="246"/>
           </motion.div>
           <motion.h1 variants={item}>Carolyn McNeillie</motion.h1>
           <motion.p className="h2" variants={item}>
@@ -115,4 +115,18 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage
 
-export const Head: HeadFC = () => <title>Carolyn McNeillie</title>
+export const Head: HeadFC = () => (
+  <>
+    <html lang="en" />
+    <title>Carolyn McNeillie</title>
+    <meta name="description" content="I am a senior front-end developer who has been crafting exceptional web experiences for five years. I love CSS." />
+    <link id="icon" rel="icon" href="icon-specific-for-this-page" />
+    <meta name="image" content="./images/Carolyn.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Carolyn McNeillie" />
+    <meta name="twitter:url" content="https://www.carolynmcneillie.com"/>
+    <meta name="twitter:description" content="I am a senior front-end developer who has been crafting exceptional web experiences for five years. I love CSS." />
+    <meta name="twitter:image" content="./images/Carolyn.png" />
+    <meta name="twitter:creator" content="carolynalive" />
+  </>
+)
