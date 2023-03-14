@@ -29,7 +29,6 @@ const item = {
 };
 
 const IndexPage: React.FC<PageProps> = () => {
-
   return (
     <main>
       <Background />
@@ -39,13 +38,13 @@ const IndexPage: React.FC<PageProps> = () => {
         initial="hidden"
         animate="visible"
       >
-          <motion.div variants={item}>
+          {/* <motion.div variants={item}> */}
             <StaticImage
               alt="Carolyn McNeillie, illustration by Patrick Gray" 
               src="https://www.carolynmcneillie.com/static/c6a9e439e2b76f961b824beb0279d377/78646/Carolyn.png"
               className="profileImage" 
             />
-          </motion.div>
+          {/* </motion.div> */}
           <motion.h1 variants={item}>Carolyn McNeillie</motion.h1>
           <motion.p className="h2" variants={item}>
             Toronto / Hamilton / Anywhere <br />
