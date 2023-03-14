@@ -126,7 +126,6 @@ export const Head: HeadFC = () => (
     <html lang="en" />
     <title>Carolyn McNeillie</title>
     <meta name="description" content="I am a senior front-end developer who has been crafting exceptional web experiences for five years. I love CSS." />
-    <link id="icon" rel="icon" href="../images/icon.png" />
     <meta name="image" content="../images/Carolyn.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Carolyn McNeillie" />

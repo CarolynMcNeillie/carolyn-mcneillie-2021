@@ -59,44 +59,37 @@ const Background = () => {
   const tile = useMemo(generateTile, []);
   const [rowCount, setRowCount] = useState<number>();
 
-  useEffect(() => {
-    const handleWindowResize = () => {
-      const tileWidth = window.innerWidth / 7
-      setRowCount(Math.ceil(window.innerHeight / tileWidth))
-    };
-
-    if (!isSSR) window.addEventListener('resize', handleWindowResize);
-    console.log(rowCount)
-
-    return () => {
-      window.removeEventListener('resize', handleWindowResize);
-    };
-  }, [isSSR]);
+  const updateRowCount = () => {
+    const tileWidth = window.innerWidth / 7
+    setRowCount(Math.ceil(window.innerHeight / tileWidth))
+  };
 
   useEffect(() => {
     if (!isSSR) {
       updateTheme(scheme)
+      updateRowCount()
+      window.addEventListener('resize', updateRowCount);
     }
-  }, [isSSR])
 
-  useEffect(() => {
-    if (!isSSR) {
-      console.log(window.innerHeight, window.innerWidth)
-    }
+    return () => {
+      window.removeEventListener('resize', updateRowCount);
+    };
   }, [isSSR])
 
   const Row = () => {
-    const repeat = 7
     return (
       <div className="row">
-        {[...Array(repeat)].map((e, i) => tile)}
+        {tile}{tile}{tile}{tile}{tile}{tile}{tile}
       </div>
     )
   }
 
   return (
     <div className="background">
-      <Row/><Row/><Row/><Row/><Row/><Row/><Row/><Row/><Row/>
+      {[...Array(rowCount)].map((el, i) => {
+        const loopKey = `row-${i}`
+        return (<Row key={loopKey}/>)
+      })}
     </div>
   )
 }
