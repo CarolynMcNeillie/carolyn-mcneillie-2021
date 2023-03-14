@@ -1,11 +1,12 @@
 import * as React from "react"
-import type { HeadFC, PageProps } from "gatsby"
 import "../styles/normalize.css"
 import "../styles/styles.scss"
-import Background from "../components/Background/Background"
-import { motion } from "framer-motion";
 import { StaticImage } from 'gatsby-plugin-image'
+import { motion } from "framer-motion";
+import type { HeadFC, PageProps } from "gatsby"
+import Background from "../components/Background/Background"
 
+// Set up Framer Motion
 const container = {
   hidden: { opacity: 0, scale: 0.8 },
   visible: {
@@ -119,6 +120,7 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage
 
+// HTML Head
 export const Head: HeadFC = () => (
   <>
     <html lang="en" />

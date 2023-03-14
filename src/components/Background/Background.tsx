@@ -1,17 +1,15 @@
-import React, {useMemo, useState} from "react"
+import React, {useMemo, useEffect, useState} from "react"
 import { motion } from "framer-motion";
 
 import tiles from './tiles'
 import themes from './themes'
 
+// Setup
 const cells = ['dark', 'medium', 'light']
 
 const randomIntFromInterval = (min: number, max:number) => {
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
-
-const currentTile = randomIntFromInterval(0, tiles.length -1)
-const scheme = randomIntFromInterval(0, themes.length -1)
 
 function updateTheme(index: number) {
   const newTheme = themes[index]
@@ -19,6 +17,9 @@ function updateTheme(index: number) {
     document.documentElement.style.setProperty(key, newTheme[key]);
   })
 }
+
+const currentTile = randomIntFromInterval(0, tiles.length -1)
+const scheme = randomIntFromInterval(0, themes.length -1)
 
 const generateTile = () => {
   const size = tiles[currentTile].size * 10
@@ -55,96 +56,47 @@ const generateTile = () => {
 
 const Background = () => {
   const isSSR = typeof window === "undefined"
-  const myTile = useMemo(generateTile, [])
+  const tile = useMemo(generateTile, []);
+  const [rowCount, setRowCount] = useState<number>();
 
-  if (!isSSR) {
-    updateTheme(scheme)
+  useEffect(() => {
+    const handleWindowResize = () => {
+      const tileWidth = window.innerWidth / 7
+      setRowCount(Math.ceil(window.innerHeight / tileWidth))
+    };
+
+    if (!isSSR) window.addEventListener('resize', handleWindowResize);
+    console.log(rowCount)
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, [isSSR]);
+
+  useEffect(() => {
+    if (!isSSR) {
+      updateTheme(scheme)
+    }
+  }, [isSSR])
+
+  useEffect(() => {
+    if (!isSSR) {
+      console.log(window.innerHeight, window.innerWidth)
+    }
+  }, [isSSR])
+
+  const Row = () => {
+    const repeat = 7
+    return (
+      <div className="row">
+        {[...Array(repeat)].map((e, i) => tile)}
+      </div>
+    )
   }
-  
 
   return (
     <div className="background">
-      <div className="row">
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-      </div>
-      <div className="row">
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-      </div>
-      <div className="row">
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-      </div>
-      <div className="row">
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-      </div>
-      <div className="row">
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-      </div>
-      <div className="row">
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-      </div>
-      <div className="row">
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-      </div>
-      <div className="row">
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-      </div>
-      <div className="row">
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-        {myTile}
-      </div>
+      <Row/><Row/><Row/><Row/><Row/><Row/><Row/><Row/><Row/>
     </div>
   )
 }
