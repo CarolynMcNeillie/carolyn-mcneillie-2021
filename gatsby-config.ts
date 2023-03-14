@@ -28,6 +28,12 @@ const config: GatsbyConfig = {
         crossOrigin: `use-credentials`,
       },
     },
+    {
+      resolve: "gatsby-plugin-google-analytics",
+      options: {
+        trackingId: "UA-113885017-1",
+      },
+    },
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-plugin-sass",
