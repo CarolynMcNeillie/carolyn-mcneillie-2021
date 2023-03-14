@@ -18,6 +18,8 @@ const config: GatsbyConfig = {
         display: "swap",
       },
     },
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
     "gatsby-plugin-sass",
     "gatsby-plugin-sitemap"
   ]

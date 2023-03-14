@@ -4,6 +4,7 @@ import "../styles/normalize.css"
 import "../styles/styles.scss"
 import Background from "../components/Background/Background"
 import { motion } from "framer-motion";
+import { StaticImage } from 'gatsby-plugin-image'
 
 const container = {
   hidden: { opacity: 0, scale: 0.8 },
@@ -39,7 +40,11 @@ const IndexPage: React.FC<PageProps> = () => {
         animate="visible"
       >
           <motion.div variants={item}>
-            <img src="./images/Carolyn.png" className="profileImage" alt="Carolyn McNeillie, illustration by Patrick Gray" width="180" height="246"/>
+            <StaticImage
+              alt="Carolyn McNeillie, illustration by Patrick Gray" 
+              src="https://www.carolynmcneillie.com/static/c6a9e439e2b76f961b824beb0279d377/78646/Carolyn.png"
+              className="profileImage" 
+            />
           </motion.div>
           <motion.h1 variants={item}>Carolyn McNeillie</motion.h1>
           <motion.p className="h2" variants={item}>
