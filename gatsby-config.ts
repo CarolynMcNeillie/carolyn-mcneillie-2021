@@ -18,6 +18,16 @@ const config: GatsbyConfig = {
         display: "swap",
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "Carolyn McNeillie",
+        short_name: "Carolyn",
+        start_url: "/",
+        icon: "src/images/icon.png",
+        crossOrigin: `use-credentials`,
+      },
+    },
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-plugin-sass",
